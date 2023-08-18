@@ -1,12 +1,15 @@
 *{
     margin: 0;
     padding: 0;
+    
+}
+body {
+    font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif; 
+    background-color: #0000;
 }
 canvas{
-    /* background-image: url(1804a8b2a2fc600bdefb6.gif);
+    background-image: url(bg.gif);
     background-repeat: no-repeat;
-    background-size: cover; */
-    border: 2px solid red;
-    
-
+    background-size: cover;
+    /* border: 2px solid red; */
 }
