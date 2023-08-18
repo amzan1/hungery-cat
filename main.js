@@ -7,9 +7,10 @@ function startGame(){
 
     myGameArea.start();
 }
+let canvas = document.createElement("canvas");
 let area = document.getElementById("area");
 var myGameArea = {
-    canvas : document.createElement("canvas"),
+    canvas : canvas,
     start : function() {
         this.canvas.width = innerWidth;
         this.canvas.height = innerHeight;
@@ -24,7 +25,7 @@ var myGameArea = {
     
     }
 function component(w, h, color, x, y, type){
-    const gravity = 1.5;
+    const gravity = 2.5;
     this.width = w;
     this.height = h;
     this.x = x;
@@ -39,7 +40,6 @@ function component(w, h, color, x, y, type){
     }
 this.update = function() {
         ctx = myGameArea.context;
-        this.move_y += gravity
         if (type == "image") {
             ctx.drawImage(this.image, 
                 this.x, 
@@ -52,6 +52,12 @@ this.update = function() {
             ctx.fillStyle = color;
             ctx.fillRect(this.x, this.y, this.width, this.height);
         }
+        if(this.y + this.height + this.move_y <= canvas.height){
+            this.move_y += gravity
+        }else{
+            this.move_y = 0;
+        }
+
     }
     this.position = function(){
         this.x += this.move_x;
@@ -64,3 +70,25 @@ function updateGame(){
     mycat.position();
     mycat.update();
 }
+// moving the cat
+/////////// start ///////////
+
+addEventListener("keydown", function(event){
+    if(event.key=="ArrowRight"){
+        mycat.move_x = 1; 
+    }
+    if(event.key=="ArrowLeft"){
+        mycat.move_x = -1; 
+    }
+    console.log(event);
+})
+addEventListener("keyup", function(event){
+    if(event.key=="ArrowRight"){
+        mycat.move_x = 0; 
+    }
+    if(event.key=="ArrowLeft"){
+        mycat.move_x = 0; 
+    }
+})
+/////////// end ////////////
+
