@@ -1,0 +1,12 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+canvas{
+    /* background-image: url(1804a8b2a2fc600bdefb6.gif);
+    background-repeat: no-repeat;
+    background-size: cover; */
+    border: 2px solid red;
+    
+
+}
