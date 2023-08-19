@@ -93,7 +93,7 @@ function updateGame(){
         mycat.move_x = 0;
     }
     if(mycat.x==food.x && k.right.pressed ){
-        alert("you win");
+        alert("Congratulations! You win. To move to the next level, click OK.");
         window.location.href="level2.html"
     }
 }
