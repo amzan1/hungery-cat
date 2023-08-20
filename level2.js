@@ -2,10 +2,10 @@
 let mycat;
 
 function startGame(){
-    mycat =  new component(280, 180, "cat.gif", 0, 90, "image");
+    mycat =  new component(280, 180, "cat.gif", 50, 90, "image");
     food = new component(190, 150, "catFood1.png", 760, 480, "image");
     ground = new component(1100, 140, "grass-sm.png", -9, 500, "image");
-    block1 = new obstacle(150, 30, "#53310d", 285, 300)
+    block1 = new obstacle(150, 30, "#53310d", 331, 300)
     block2 = new obstacle(150, 30, "#53310d", 450, 180)
     block3 = new obstacle(150, 30, "#53310d", 600, 300)
 
@@ -135,7 +135,7 @@ function updateGame(){
         }
 
     if(mycat.x==food.x){
-        alert("Congratulations! You win. To move to the next level, click OK.");
+        alert("Congratulations! You win in level 2. To move to the level 2, click OK.");
         window.location.href="level3.html"
     }
 
@@ -183,5 +183,21 @@ addEventListener("keyup", function(event){
 
 // 
 /////////// start ///////////
+function left() {
+    mycat.move_x = -1; 
+    k.left.pressed=true
+    stop()
+}
+function jump() {
+    mycat.move_y-= 10;
+}
+function right() {
+    mycat.move_x = 1; 
+        k.right.pressed=true
 
+}
+function stop(){
+    mycat,move_x = 0;
+    mycat.move_y = 0;
+}
 /////////// end ////////////

@@ -13,10 +13,14 @@
     align-items: center;
     font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif; 
 }
-.hidden {
-    display: none;
-}
 
+
+canvas{
+    background-image: url(bg.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* border: 2px solid red; */
+}
  /* Desktop */
 
 @media only screen and (min-width: 992px) {
@@ -28,29 +32,30 @@
         color: white;
     }
     
-    canvas{
-        background-image: url(bg.gif);
-        background-repeat: no-repeat;
-        background-size: cover;
-        /* border: 2px solid red; */
-    }
+    
 }
 /* Tablet */
 @media only screen and (min-width:321px) and (max-width:768px) {
-    .des{
-        display: none;
+    canvas{
+        margin: 0;
+        padding: 0;
     }
     .tab{
         display: flex;
     justify-content: center;
     align-items: center;
         color: white;
+        /* border: 2px solid red; */
+        width: 600px;
+        
 
     }
-    canvas{
-        background-image: url(bg.gif);
-        background-repeat: no-repeat;
-        background-size: cover;
-        /* border: 2px solid red; */
+    .btns{
+        /* border: 2px solid rgb(0, 136, 255); */
+        width: 400px;
+        display: flex;
+        justify-content: space-evenly;
+
     }
+    
 }

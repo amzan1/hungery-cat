@@ -1,9 +1,12 @@
 
 let mycat;
-let hidebtn = document.getElementById("hide");
+function GoNewPage(){
+
+    window.location.href="level1.html";
+}
 function startGame(){
-    hidebtn.style.display = "none"
-    mycat =  new component(280, 180, "cat.gif", 0, 90, "image");
+
+    mycat =  new component(280, 180, "cat.gif", 50, 90, "image");
     food = new component(140, 110, "catFood.png", 760, 500, "image");
     ground = new component(1100, 140, "grass-sm.png", -9, 500, "image");
     //mycat =  new component(w, h, color, x, y, "image");
@@ -14,13 +17,14 @@ function startGame(){
 let canvas = document.createElement("canvas");
 
 let area = document.getElementById("area");
+
 var myGameArea = {
     canvas : canvas,
     start : function() {
         this.canvas.width = 1000;
         this.canvas.height = 600;
         this.context = this.canvas.getContext("2d");
-        area.appendChild(this.canvas);
+        area.appendChild(canvas);
         this.int = setInterval(updateGame , 10);
         },
         clear : function() {
@@ -93,7 +97,7 @@ function updateGame(){
         mycat.move_x = 0;
     }
     if(mycat.x==food.x && k.right.pressed ){
-        alert("Congratulations! You win. To move to the next level, click OK.");
+        alert("Congratulations! You win in level 1. To move to the level 2, click OK.");
         window.location.href="level2.html"
     }
 }
@@ -139,5 +143,21 @@ addEventListener("keyup", function(event){
 
 // 
 /////////// start ///////////
+function left() {
+    mycat.move_x = -1; 
+    k.left.pressed=true
+    stop()
+}
+function jump() {
+    mycat.move_y-= 10;
+}
+function right() {
+    mycat.move_x = 1; 
+        k.right.pressed=true
 
+}
+function stop(){
+    mycat,move_x = 0;
+    mycat.move_y = 0;
+}
 /////////// end ////////////

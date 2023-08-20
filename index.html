@@ -3,22 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hungery Cat-level1</title>
+    <title>Hungry Cat-level1</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     
 </head>
-<body>
-    <div class=" d-flex justify-content-center align-items-center  mt-5 ">
-        <div id="area" class="d-flex justify-content-center mt-5">
-            <div id="hide" class="mt-5">
-                <button type="button" onclick="startGame()" class="btn btn-secondary mt-5">start</button>
+<body class="body">
+    <div class="des">
+        <div class=" d-flex justify-content-center align-items-center  mt-5">
+            <div class="d-flex justify-content-center mt-5 flex-column">
+                <div  class="d-flex justify-content-center align-items-center mt-5 flex-column">
+                    <h1>This cat is hungry, please give her food.</h1>
+                    <p style="font-size: 25px; letter-spacing: 2px;" class="mt-5">the playing way</p>
+                    <p>If you want to go right, press the right arrow  -></p>
+                    <p>If you want to go left, press the left arrow  <-</p>
+                    <p>If you want to jump, press the space</p>
+
+                    <button type="button" onclick="GoNewPage()" class="btn btn-primary mt-5 align-middle">start</button>
+
+                </div>
             </div>
         </div>
     </div>
+    <div class="tab">
+        
+                <div class="d-flex justify-content-center align-items-center mt-5 flex-column">
+                    <h1>This cat is hungry, please give her food.</h1>
+                    <p style="font-size: 25px;" class="mt-5">the playing way</p>
+                    <p>If you want to go to the right, press the right button</p>
+                    <p>If you want to go left, press the left button</p>
+                    <p>If you want to jump, press the up button</p>
+                    <button type="button" onclick="GoNewPage()" class="btn btn-primary mt-5 align-middle">start</button>
+                </div>
+
+        <script src="main.js"></script>
+
+    </div>
     
-    <script src="main.js"></script>
     
 </body>
 </html>

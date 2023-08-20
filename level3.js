@@ -1,12 +1,12 @@
 
 let mycat;
 function startGame(){
-    mycat =  new component(280, 180, "cat.gif", 0, 90, "image");
+    mycat =  new component(280, 180, "cat.gif", 150, 90, "image");
     food = new component(140, 110, "catFood.png", 1200, 500, "image");
     ground = new obstacle(800, 140, "grass-sm.png", 0, 500, "image");
     ground1 = new obstacle(900, 140, "grass-sm.png", 700, 500, "image");
 
-    block1 = new obstacle(250, 30, "#53310d", 285, 300)
+    block1 = new obstacle(250, 30, "#53310d", 440, 300)
     block2 = new obstacle(250, 30, "#53310d", 750, 180)
     block3 = new obstacle(250, 30, "#53310d", 1185, 300)
     block4 = new obstacle(250, 30, "#53310d", 1550, 180)
@@ -157,7 +157,19 @@ function updateGame(){
         mycat.move_y = 0;
     }
     if(mycat.x==food.x && k.right.pressed ){
-        alert("Congratulations! You win. To move to the next level, click OK.");
+        Swal.fire({
+            title: 'Congratulations! You have completed all levels.',
+            width: 600,
+            padding: '3em',
+            color: '#716add',
+            background: '#fff',
+            backdrop: `
+                rgba(0,0,123,0.4)
+                url("giphy.gif")
+                
+                no-repeat
+            `
+        })
     }
     
 }
@@ -203,6 +215,20 @@ addEventListener("keyup", function(event){
 
 // stop function
 /////////// start ///////////
+function left() {
+    mycat.move_x = -1; 
+    k.left.pressed=true
+    stop()
+}
+function jump() {
+    mycat.move_y-= 10;
+}
+function right() {
+    mycat.move_x = 1; 
+        k.right.pressed=true
+
+}
+
 function stop() {
     mycat.move_x = 0; 
     mycat.move_y = 0; 
