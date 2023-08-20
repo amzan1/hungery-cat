@@ -1,4 +1,3 @@
-
 let mycat;
 function startGame(){
     mycat =  new component(280, 180, "cat.gif", 150, 90, "image");
@@ -157,6 +156,7 @@ function updateGame(){
         mycat.move_y = 0;
     }
     if(mycat.x==food.x && k.right.pressed ){
+        alert("Congratulations! You have completed all levels.")
         Swal.fire({
             title: 'Congratulations! You have completed all levels.',
             width: 600,
